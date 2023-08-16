@@ -13,9 +13,24 @@ class FamilyFutureScreen extends StatelessWidget {
       body: const Center(
         child: Text('Fernando Herrera'),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon( Icons.refresh ),
-        onPressed: () {  },
+            floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            heroTag: 'btn-1',
+            child: const Icon(Icons.refresh),
+            onPressed: () {
+
+            },
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton(
+            child: const Icon(Icons.minimize_outlined),
+            onPressed: () {
+
+            },
+          ),
+        ],
       ),
     );
   }
