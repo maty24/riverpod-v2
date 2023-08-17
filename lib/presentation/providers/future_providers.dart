@@ -37,3 +37,14 @@ class PokemonId extends _$PokemonId {
     }
   }
 }
+
+
+//! anteriormente llamados family
+
+//esto mantiene todos los estado anteriores, asi no tengo que hacer 2 provider para hacer la peticion y otro para mantener el estado
+@Riverpod(keepAlive: true)
+Future<String> pokemon(PokemonRef ref, int pokemonId) async {
+  //peticion http
+  final pokemonName = await PokemonInformation.getPokemonName(pokemonId);
+  return pokemonName;
+}
